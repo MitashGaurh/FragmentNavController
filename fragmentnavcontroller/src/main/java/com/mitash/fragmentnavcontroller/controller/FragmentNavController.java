@@ -10,7 +10,6 @@ import android.view.Menu;
 import com.mitash.fragmentnavcontroller.NavigationExecutors;
 import com.mitash.fragmentnavcontroller.util.FragmentNavUtil;
 import com.mitash.fragmentnavcontroller.vo.StackHolder;
-import com.mitash.fragmentnavcontroller.vo.StackTransaction;
 
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
@@ -20,6 +19,7 @@ import java.util.Stack;
 /**
  * Created by Mitash Gaurh on 9/4/2018.
  */
+@SuppressWarnings("WeakerAccess")
 public class FragmentNavController {
 
     private static FragmentNavController sFragmentNavController;
@@ -141,14 +141,12 @@ public class FragmentNavController {
         return menuItemId.equals(mCurrentStackIndex);
     }
 
-    public void performStackFragmentsTransaction(StackTransaction stackTransaction) {
+    public void performStackFragmentsTransaction(Fragment newFragment) {
 
-        Stack<Fragment> stack = mStackHolder.get(stackTransaction.stackIndex).fragmentStack;
+        Stack<Fragment> stack = mStackHolder.get(mCurrentStackIndex).fragmentStack;
 
         if (null != stack) {
-            mCurrentStackIndex = stackTransaction.stackIndex;
-
-            performStackOperation(stack, stackTransaction.newFragment, false);
+            performStackOperation(stack, newFragment, false);
         }
 
     }

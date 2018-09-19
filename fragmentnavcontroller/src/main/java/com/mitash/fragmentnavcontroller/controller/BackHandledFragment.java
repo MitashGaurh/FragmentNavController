@@ -5,7 +5,6 @@ import android.os.Bundle;
 import android.support.v4.app.Fragment;
 
 import com.mitash.fragmentnavcontroller.FragmentNavigator;
-import com.mitash.fragmentnavcontroller.vo.StackTransaction;
 
 /**
  * Created by Mitash Gaurh on 9/4/2018.
@@ -63,8 +62,8 @@ public abstract class BackHandledFragment extends Fragment {
         return mBackHandlerInterface.popBackStack();
     }
 
-    public void onQueueTransaction(StackTransaction stackTransaction) {
-        mBackHandlerInterface.triggerStackTransaction(stackTransaction);
+    public void onQueueTransaction(Fragment newFragment) {
+        mBackHandlerInterface.triggerStackTransaction(newFragment);
     }
 
     interface BackHandlerInterface {
@@ -73,6 +72,6 @@ public abstract class BackHandledFragment extends Fragment {
 
         Boolean popBackStack();
 
-        void triggerStackTransaction(StackTransaction stackTransaction);
+        void triggerStackTransaction(Fragment newFragment);
     }
 }
