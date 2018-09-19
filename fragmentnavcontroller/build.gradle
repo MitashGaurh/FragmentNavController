@@ -1,5 +1,5 @@
 apply plugin: 'com.android.library'
-apply plugin: 'maven-publish'
+//apply from: 'maven-push.gradle'
 
 android {
     compileSdkVersion 27
@@ -34,7 +34,7 @@ task sourceJar(type: Jar) {
     classifier "sources"
 }
 
-publishing {
+/*publishing {
     publications {
         maven(MavenPublication) {
             groupId 'com.mitash'
@@ -49,4 +49,4 @@ publishing {
             url "$buildDir/repo"
         }
     }
-}
+}*/
