@@ -1,11 +1,12 @@
 package com.mitash.fragmentnavcontroller.controller;
 
-import android.support.annotation.IntDef;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentTransaction;
 import android.util.SparseArray;
 import android.view.Menu;
+
+import androidx.annotation.IntDef;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
 import com.mitash.fragmentnavcontroller.NavigationExecutors;
 import com.mitash.fragmentnavcontroller.util.FragmentNavUtil;

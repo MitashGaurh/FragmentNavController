@@ -3,11 +3,11 @@ apply plugin: 'com.github.dcendents.android-maven'
 group = 'com.github.fragmentnavcontroller'
 
 android {
-    compileSdkVersion 27
+    compileSdkVersion 29
 
     defaultConfig {
         minSdkVersion 14
-        targetSdkVersion 27
+        targetSdkVersion 29
         versionCode 1
         versionName "1.0"
 
@@ -27,27 +27,5 @@ android {
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
-    implementation 'com.android.support:appcompat-v7:27.1.1'
+    implementation 'androidx.appcompat:appcompat:1.1.0'
 }
-
-task sourceJar(type: Jar) {
-    from android.sourceSets.main.java.srcDirs
-    classifier "sources"
-}
-
-/*publishing {
-    publications {
-        maven(MavenPublication) {
-            groupId 'com.mitash'
-            artifactId 'fragmentNavController'
-            version '0.1'
-            artifact(sourceJar)
-            artifact("$buildDir/outputs/aar/fragmentnavcontroller-release.aar")
-        }
-    }
-    repositories {
-        maven {
-            url "$buildDir/repo"
-        }
-    }
-}*/

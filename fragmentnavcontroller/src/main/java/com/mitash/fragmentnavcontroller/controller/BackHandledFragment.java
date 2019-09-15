@@ -2,7 +2,9 @@ package com.mitash.fragmentnavcontroller.controller;
 
 import android.app.Activity;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
+
+import androidx.annotation.NonNull;
+import androidx.fragment.app.Fragment;
 
 import com.mitash.fragmentnavcontroller.FragmentNavigator;
 
@@ -49,7 +51,7 @@ public abstract class BackHandledFragment extends Fragment {
 
     @SuppressWarnings("deprecation")
     @Override
-    public void onAttach(Activity activity) {
+    public void onAttach(@NonNull Activity activity) {
         super.onAttach(activity);
 
         if (!FragmentNavigator.provideController().isFragmentHideStrategy()) {

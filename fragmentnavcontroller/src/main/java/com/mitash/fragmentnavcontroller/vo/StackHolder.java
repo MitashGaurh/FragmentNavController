@@ -1,6 +1,6 @@
 package com.mitash.fragmentnavcontroller.vo;
 
-import android.support.v4.app.Fragment;
+import androidx.fragment.app.Fragment;
 
 import java.util.Stack;
 
